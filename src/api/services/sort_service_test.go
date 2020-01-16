@@ -2,7 +2,6 @@ package services
 
 import (
 	"api/utis/sort"
-	"fmt"
 	"testing"
 )
 
@@ -15,7 +14,6 @@ func TestSort(t *testing.T) {
 	if elements[len(elements)-1] != 9 {
 		t.Error("last element should be 9")
 	}
-	fmt.Println(elements)
 }
 
 func TestSortMoreThan10000(t *testing.T) {
