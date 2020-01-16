@@ -1,16 +1,14 @@
 package services
 
 import (
+	"api/utis/sort"
 	"fmt"
 	"testing"
 )
 
 func TestSort(t *testing.T) {
-	elements := []int{9, 5, 6, 4, 3, 2, 4, 0}
-	fmt.Println(elements)
-
+	elements := sort.GetElements(10)
 	Sort(elements)
-
 	if elements[0] != 0 {
 		t.Error("first element should be 0")
 	}
@@ -18,4 +16,17 @@ func TestSort(t *testing.T) {
 		t.Error("last element should be 9")
 	}
 	fmt.Println(elements)
+}
+
+func TestSortMoreThan10000(t *testing.T) {
+	elements := sort.GetElements(10001)
+	Sort(elements)
+
+	if elements[0] != 0 {
+		t.Error("first element should be 0")
+	}
+	if elements[len(elements)-1] != 10000 {
+		t.Error("last element should be 9")
+	}
+
 }

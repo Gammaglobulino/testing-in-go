@@ -1,6 +1,9 @@
 package sort
 
-import "sort"
+import (
+	"math/rand"
+	"sort"
+)
 
 //using Bubble Sort homemade
 func BubbleSort(elements []int) {
@@ -21,4 +24,14 @@ func BubbleSort(elements []int) {
 func Sort(elements []int) {
 	sort.Ints(elements)
 
+}
+func GetElements(n int) []int {
+	elements := make([]int, n)
+	for i := 0; i < n-1; i++ {
+		elements[i] = rand.Intn(n)
+	}
+	elements[0] = 0
+	elements[n-1] = n - 1
+
+	return elements
 }
